@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Timezone.Properties;
 
 namespace Timezone
 {
@@ -13,7 +14,7 @@ namespace Timezone
         {
             List<Tuple<string, string>> lReturn = new List<Tuple<string, string>>();
 
-            string[] fileParts = File.ReadAllText("Timezone.txt").Split(new string[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries);
+            string[] fileParts = Resources.Timezone.Split(new string[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries);
 
             foreach (string part in fileParts)
             {
