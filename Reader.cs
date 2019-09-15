@@ -8,7 +8,7 @@ using Timezone.Properties;
 
 namespace Timezone
 {
-    class Reader : IReader, IDisposable
+    class Reader : IReader<string>, IDisposable
     {
         public List<Tuple<string, string>> Read()
         {
