@@ -1,14 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Timezone.Properties;
 
 namespace Timezone
 {
-    class Reader : IReader<string>, IDisposable
+    class Reader : IReader<string>
     {
         public List<Tuple<string, string>> Read()
         {
@@ -26,9 +23,6 @@ namespace Timezone
             }
 
             return lReturn;
-        }
-        public void Dispose()
-        {
         }
     }
 }
