@@ -15,7 +15,15 @@ namespace Timezone
             using (Reader fileReader = new Reader())
             {
                 List<Tuple<string, string>> lTimes = fileReader.Read();
+
+                foreach (Tuple<string, string> timeZone in lTimes)
+                {
+                    timeZoneParser.DisplayTime(timeZone.Item1, timeZone.Item2);
+                }
             }
+
+            Console.WriteLine($"{Environment.NewLine}Press any key to exit.");
+            Console.ReadKey();
         }
     }
 }
