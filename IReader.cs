@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Timezone
 {
-    interface IReader<T> where T: class
+    public interface IReader<T> where T: class
     {
-        List<Tuple<T, T>> Read();
+        List<Tuple<T, T>> Read(string inputFile);
     }
 }

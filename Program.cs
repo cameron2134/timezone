@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Timezone.Properties;
 
 namespace Timezone
 {
@@ -11,9 +12,9 @@ namespace Timezone
     {        
         static void Main(string[] args)
         {
-            Parser timeZoneParser = new Parser();
-            Reader fileReader = new Reader();
-            List<Tuple<string, string>> timezoneList = fileReader.Read();
+            IParser timeZoneParser = new Parser();
+            IReader<string> fileReader = new Reader();
+            List<Tuple<string, string>> timezoneList = fileReader.Read(Resources.Timezone);
 
             foreach (Tuple<string, string> timeZone in timezoneList)
             {
