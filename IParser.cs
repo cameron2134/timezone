@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Timezone
 {
-    interface IParser
+    public interface IParser
     {
         void DisplayTime(string time, string timezone);
     }
