@@ -35,10 +35,23 @@ namespace Timezone
                 return;
             }
 
-            var convertedTime = TimeZoneInfo.ConvertTime(parsedUkTime, _ukTimeZoneInfo, parsedTimeZoneInfo);
-            Console.WriteLine($"The time in the UK is {parsedUkTime.ToString("HH:mm")} " +
-                $"and the time in {timezone} is {convertedTime.ToString("HH:mm")}");
-        }
 
+            try
+            {
+                var convertedTime = TimeZoneInfo.ConvertTime(parsedUkTime, _ukTimeZoneInfo, parsedTimeZoneInfo);
+                Console.WriteLine($"The time in the UK is {parsedUkTime.ToString("HH:mm")} " +
+                $"and the time in {timezone} is {convertedTime.ToString("HH:mm")}");
+            }
+
+            catch (ArgumentException argEx)
+            {
+                Console.WriteLine($"Error: Invalid argument for ConvertTime - {argEx}");
+            }
+
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error: Unable to display time conversion for timezone {timezone} - {ex}");
+            }
+        }
     }
 }

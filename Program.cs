@@ -13,9 +13,9 @@ namespace Timezone
         {
             Parser timeZoneParser = new Parser();
             Reader fileReader = new Reader();
-            List<Tuple<string, string>> lTimes = fileReader.Read();
+            List<Tuple<string, string>> timezoneList = fileReader.Read();
 
-            foreach (Tuple<string, string> timeZone in lTimes)
+            foreach (Tuple<string, string> timeZone in timezoneList)
             {
                 timeZoneParser.DisplayTime(timeZone.Item1, timeZone.Item2);
             }
